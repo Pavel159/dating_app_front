@@ -50,6 +50,7 @@ const SecondStep = () => {
     localStorage.setItem('alcohol', alcohol);
     localStorage.setItem('zodiac', zodiac);
     localStorage.setItem('about', about);
+    localStorage.setItem('step', '2');
     dispatch(setActiveStep(activeStep + 1));
   };
 
@@ -63,6 +64,7 @@ const SecondStep = () => {
     localStorage.setItem('alcohol', alcohol);
     localStorage.setItem('zodiac', zodiac);
     localStorage.setItem('about', about);
+    localStorage.setItem('step', '0');
     dispatch(setActiveStep(activeStep - 1));
   };
   return (
@@ -149,11 +151,12 @@ const SecondStep = () => {
         onChange={(e) => setAbout(e.target.value)}
       />
 
+      <Button onClick={handleNext} variant='contained'>
+        Далее
+      </Button>
+
       <Button onClick={handleBack} variant='outlined'>
         Назад
-      </Button>
-      <Button onClick={handleNext} variant='outlined'>
-        Далее
       </Button>
     </form>
   );

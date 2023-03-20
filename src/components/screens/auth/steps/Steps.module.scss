@@ -5,3 +5,14 @@
   margin: 100px auto;
   gap: 16px;
 }
+
+.avatar {
+  display: flex;
+  justify-content: space-around;
+}
+
+.avatarPreview {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

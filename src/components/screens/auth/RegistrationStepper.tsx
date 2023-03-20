@@ -3,13 +3,9 @@ import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Stepper from '@mui/material/Stepper';
 import Typography from '@mui/material/Typography';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../../../hooks/redux';
 import { setActiveStep } from '../../../store/reducers/registrationSlice';
-import RegistrationForm from './RegistrationForm';
-// import { SignUp } from './components/SignUp';
-// import { SignIn } from "./components/SignIn";
-// import { EmployeeForm } from "./components/EmployeeForm";
 import FirstStep from './steps/FirstStep';
 import SecondStep from './steps/SecondStep';
 import ThirdStep from './steps/ThirdStep';
@@ -44,18 +40,10 @@ function getStepContent(stepIndex: number) {
 }
 
 export default function HorizontalLabelPositionBelowStepper() {
-  // const [activeStep, setActiveStep] = React.useState(0);
+  // const [step, setStep] = useState(Number(localStorage.getItem('step')) || 0);
   const { activeStep } = useAppSelector((state) => state.registrationReducer);
   const dispatch = useAppDispatch();
   const steps = getSteps();
-
-  const handleNext = () => {
-    dispatch(setActiveStep(activeStep + 1));
-  };
-
-  const handleBack = () => {
-    dispatch(setActiveStep(activeStep - 1));
-  };
 
   const handleReset = () => {
     dispatch(setActiveStep(0));
